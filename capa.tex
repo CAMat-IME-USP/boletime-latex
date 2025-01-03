@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Capa
+% Este arquivo gera a primeira página do BoletIME.
+% No geral, não é necessário editá-lo. Para configurar os textos da primeira
+% página, vá ao arquivo "/sumario.tex".
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fundo com a imagem (cabeçalho
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{textblock*}{\paperwidth}(0cm,0.4cm)
+    \centering
+    \includegraphics[width=0.95\paperwidth]{img/boletime_cabecalho.png}\\
+\end{textblock*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto e linha vermelha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{textblock*}{\paperwidth}(0.5cm,0.275\paperheight)
+    \textls[85]{
+    \sffamily\bfseries
+        produção do centro acadêmico da matemática, estatística e computação 
+    \hspace{0.3cm} \textbar{} \hspace{1.1cm}
+    \MakeLowercase{\mes}.\ano}\\    
+    \textcolor{vermelho_camat}{\rule{0.95\paperwidth}{0.25cm}} % Largura e espessura do risco
+\end{textblock*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto no canto superior direito (nº edicao)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{textblock*}{5cm}(15cm, 1cm)
+    \raggedleft 
+    {\huge \archivoblack {nº \edicao}}
+\end{textblock*}
+
+% Espaçamento
+\vspace*{0.2\paperheight}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sumário
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+    \input{sumario}
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Imagem de divulgação do BoletIME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{textblock*}{\paperwidth}(0cm, 0.82\paperheight)
+    \centering
+    \includegraphics[width=0.95\paperwidth]{img/qr_code.png}
+\end{textblock*}

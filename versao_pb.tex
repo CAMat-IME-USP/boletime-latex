@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BoletIME em LaTeX!
+% O arquivo está numa folha a4 e com tamanho de fonte padrão 11pt. Não
+% altere o tamanho da fonte se não quiser ter um trabalho danado!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt,monochrome]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pacotes utilizados
+% Para facilitar a importação centralizada de pacotes, todos os pacotes
+% são importados neste arquivo de estilos. Algumas configurações da
+% geometria da página, como a margem, o tamanho do cabeçalho e do rodapé
+% e afins, também constam aqui.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{configs/pacotes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cores
+% Aqui ficam as cores utilizadas globalmente, como o vermelho_camat.
+% Para utilizar uma cor, basta chamar por \color{NOME_DA_COR} ou então
+% \textcolor{NOME_DA_COR}{SEU TEXTO}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{configs/cores}
+% Cor do fundo
+\def\corfundo{white}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fontes
+% Aqui ficam todas as fontes carregadas na pasta "/fontes". Por padrão,
+% são a NunitoSans Condensed, a Arimo e a ArchivoBlack.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{configs/fontes}
+\setmainfont{Times New Roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Meta-dados
+% Configurações informadas para a edição específica, como a cor da página,
+% a edição, o mês etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{config_edicao}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Helpers
+% Facilitadores para processos repetivivos.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{configs/helpers}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configurações
+% Aqui ficam todas as outras estilizações e configurações do arquivo.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{configs/principal}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Início do documento
+% Tudo o que vem abaixo aparece no PDF final, até o \end{document}. A estrutura
+% do documento começa pela capa, que contém a primeira página com sumário e tal,
+% e vai para os textos.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Capa
+% Neste arquivo é feita a primeira página do documento. Não é necessário alterar
+% este arquivo, mas ele chama o arquivo "/sumario.tex". Este precisa ser editado
+% para mostrar os títulos, resumos e páginas, além de possíveis divulgações.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{capa}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conteúdo
+% Tudo o que vem abaixo é o conteúdo do BoletIME. Por padrão, as páginas são
+% divididas em duas colunas, que separam o texto automaticamente. Caso desejado
+% seguir outro formato, consulte a documentação do pacote MULTICOLS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% estilo com cabeçalho
+\pagestyle{fancy}
+% espaço entre as linhas
+\linespread{1.2}\normalsize
+% textos
+\input{textos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fim do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

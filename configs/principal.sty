@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Configuracoes da pagina
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% deixa a pagina amarelada
+\pagecolor{\corfundo}
+% separação entre as colunas
+\setlength{\columnsep}{1.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Configuracoes da fonte
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% deixa os titulos das secoes na cor vermelha
+\sectionfont{\LARGE\sffamily\color{vermelho_camat}}
+\subsectionfont{\Large\sffamily\color{vermelho_camat}}
+\subsubsectionfont{\large\sffamily\color{vermelho_camat}}
+
+% impedir que as palavras quebrem
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% espaçamento entre floats e texto
+\setlength{\intextsep}{0.5cm}
+
+% citações
+\renewenvironment*{displayquote}
+  {\vspace{-0.2cm}\begingroup\setlength{\leftmargini}{0.5cm}\csq@getcargs{\csq@bdquote{}{}}}
+  {\csq@edquote\endgroup\vspace{-0.4cm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Configuracoes da fonte
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cabeçalho e rodapé
+\pagestyle{empty}
+\fancyhf{}
+\lhead{\bfseries\footnotesize 
+    BOLETIM INFORMATIVO DES ESTUDANTES DO IME USP
+    \quad \textbar{} \quad
+    EDIÇÃO Nº \edicao
+    \quad \textbar{} \quad
+    \MakeUppercase{\mes \ de \ano}
+}
+\rhead{{\bfseries\footnotesize PÁGINA \thepage}}
+\renewcommand{\headrule}{\textcolor{vermelho_camat}{\rule{\headwidth}{0.1cm}}}
+\cfoot{}
+
+% Título e subtítulo
+\titleformat{\section}[block]{\bfseries\large}{}{0em}{}

@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Helper para a pagina inicial
+% > p. ex.: "pagina 2"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pagina}[1]{%
+    \begin{flushright}
+    {\footnotesize\textbf{página #1}}
+    \end{flushright}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Helper para autoria de textos
+% > p. ex.: "por anônimo"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\autoria}[1]{%
+    \begin{flushright}
+    {\small\textit{#1}}
+    \end{flushright}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Helper para criar avisos
+% > p. ex.: enviado via forms, etc
+%
+% Parametros:
+%   1. Cor do fundo;
+%   2. Cor da borda;
+%   3. Cor do texto;
+%   4. Texto.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\aviso}[4]{%
+    \hspace{0.05\columnwidth}
+    \fcolorbox{#2}{#1}{%
+    \minipage[t]{0.87\columnwidth}
+    \centering
+    \parbox{0.95\columnwidth}{
+    \textcolor{#3}{{\footnotesize\sffamily
+    #4
+    }}}
+    \endminipage}
+    \vspace{0.5\baselineskip}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Aviso de texto enviado via form
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\avisoTextoForms}{%
+    \aviso{vermelho_escuro_camat}{vermelho_escuro_camat}{white}{
+    \emph{O texto a seguir foi enviado via o forms de contato do BoletIME e não necessariamente condiz com a opinião do corpo editorial}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Título de seção em caixa
+% Parametros:
+%   1. Texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tituloCaixa}[1]{%
+    \hspace{0.05\columnwidth}
+    \fcolorbox{vermelho_escuro_camat}{vermelho_escuro_camat}{%
+        \minipage[t]{0.87\columnwidth}
+            \centering
+            \vspace{0.1cm}
+            \parbox{0.95\columnwidth}{
+                \centering
+                \textcolor{white}{\sffamily \Large \bfseries \MakeUppercase{#1}}
+            }
+            \vspace{0.1cm}
+        \endminipage
+        \vspace{0.5\baselineskip}
+    }
+}    
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Quadradão com texto dentro
+% Parametros:
+%   1. Tamanho da fonte (\normalsize, \large, etc)
+%   2. Espaçamento entre entre as linhas
+%   3. Espaçamento entre as letras
+%   4. Tamanho do quadrado
+%   5. Cor da borda da caixa (eg vermelho_camat)
+%   6. Tamanho da borda (eg 0.15cm)
+%   7. Texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\quadradao}[7]{%
+    \begin{tcolorbox}[width=#4, colframe=#5, colback=\corfundo, boxrule=#6]
+        \centering
+        #1
+        \textcolor{vermelho_camat}{
+        \begin{spacing}{#2}
+        \textls[#3]{
+            \centering\sffamily\bfseries #7
+        }
+        \end{spacing}}
+    \end{tcolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Seções do sumário
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemSumario}[3]{
+    \section*{\Large #1}
+    #2
+    
+    \pagina{#3}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Faz uma barra vermelha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\barraVermelha}{
+    \vspace{0.5cm}
+    \centerline{
+    \textcolor{vermelho_camat}{\rule{0.85\columnwidth}{0.15cm}}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > Título centralizado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tituloCentralizado}[1]{
+    \centerline{
+    \textcolor{vermelho_camat}{\Large\sffamily\bfseries #1}
+    }
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Legendas de figuras
+% > Parametros:
+%       1) Tamanho do spacing
+%       2) Texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\legendaFigura}[2]{
+    \begin{spacing}{#1}
+        \small #2
+    \end{spacing}
+}
+
+\newcommand{\legendaFiguraQuebraLinha}{
+    \protect\linebreak
+}
